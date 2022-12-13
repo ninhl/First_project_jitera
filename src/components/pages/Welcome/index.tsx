@@ -14,6 +14,14 @@ type WelcomePageProps = DefaultPageProps & {
 function WelcomePage(props: WelcomePageProps): JSX.Element {
   const navigateService = useNavigateService();
 
+<<<<<<< HEAD
+=======
+  const handleOnClickCommonButton = async () => {
+    try {
+      navigateService.navigate("/signup");
+    } catch (e: unknown) {}
+  };
+>>>>>>> 2c130ce7e5cdac5ca7869bb22746912af0aacd76
   const handleLogIn = async () => {
     try {
       navigateService.navigate("/login");
@@ -31,7 +39,15 @@ function WelcomePage(props: WelcomePageProps): JSX.Element {
             <Text className={styles.text6} textType={"Text"}>
               Welcome to our take note application
             </Text>
+<<<<<<< HEAD
             <Property1active className={styles.common_button1} />
+=======
+            <Property1active
+              className={styles.common_button}
+              label={"Sign Up"}
+              onClick={handleOnClickCommonButton}
+            />
+>>>>>>> 2c130ce7e5cdac5ca7869bb22746912af0aacd76
             <Text className={styles.log_in} textType={"Text"} onClick={handleLogIn}>
               Already a member? Log in
             </Text>
