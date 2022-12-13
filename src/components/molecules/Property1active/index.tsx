@@ -4,7 +4,7 @@ import { DefaultPageProps } from "@interfaces/page";
 import get from "lodash/get";
 import CommonBtn from "@components/molecules/CommonBtn";
 import { useNavigateService } from "@services/navigate";
-import { Box } from "@jitera/jitera-web-ui-library";
+import { Box,Text } from "@jitera/jitera-web-ui-library";
 import styles from "./styles.module.css";
 type Property1activeMoleculeProps = DefaultPageProps & {
   pageName?: string;
@@ -14,11 +14,10 @@ type Property1activeMoleculeProps = DefaultPageProps & {
   onClick?: () => any;
 };
 function Property1activeMolecule(props: Property1activeMoleculeProps): JSX.Element {
-  const navigateService = useNavigateService();
-
-  const handleOnClickCommonbtn1 = async () => {
+  const handleBox0 = async () => {
     try {
-      navigateService.navigate("/signup");
+      const { onClick } = props;
+      return onClick && onClick();
     } catch (e: unknown) {}
   };
   return (
@@ -26,11 +25,11 @@ function Property1activeMolecule(props: Property1activeMoleculeProps): JSX.Eleme
       className={`${styles.page_container} ${get(props, "className")}`}
       responsiveVisibility={get(props, "responsiveVisibility")}
     >
-      <CommonBtn
-        className={styles.commonbtn_1}
-        label={"Sign Up"}
-        onClick={handleOnClickCommonbtn1}
-      />
+      <Box className={styles.box_0} onClick={handleBox0}>
+        <Text className={styles.text_0} textType={"Text"}>
+          {get(props, "label")}
+        </Text>
+      </Box>
     </Box>
   );
 }
