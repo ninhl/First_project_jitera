@@ -43,8 +43,8 @@ function LoginPage(props: LoginPageProps): JSX.Element {
   const handleButton1 = async (values?: Form1FormData) => {
     try {
       await authenticationService.loginWithEmail("users", {
-        email: get(values, "input_0", ""),
-        password: get(values, "input_1", ""),
+        email: get(values, "input_1", ""),
+        password: get(values, "input_0", ""),
       });
       navigateService.navigate("/home");
     } catch (e: unknown) {
