@@ -33,6 +33,8 @@ function HomePage(props: HomePageProps): JSX.Element {
       navigateService.navigate("/detail-note", { NoteId: Id });
     } catch (e: unknown) {}
   };
+  console.log(get(getApiNotesResult, "data.notes.content"));
+  
   return (
     <Page className={styles.page_container}>
       <Box className={styles.container12}>
@@ -52,9 +54,9 @@ function HomePage(props: HomePageProps): JSX.Element {
             renderItem={useCallback(
               (item: any) => (
                 <NoteItem
-                  Content={get(getApiNotesResult, "data.notes.content")}
+                  Content={item.content}
                   onClickDetail={handleOnClickDetailList1Item}
-                  Id={get(getApiNotesResult, "data.notes.id")}
+                  Id={item.id}
                 />
               ),
               []
