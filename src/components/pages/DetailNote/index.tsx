@@ -33,16 +33,6 @@ function DetailNotePage(props: DetailNotePageProps): JSX.Element {
   });
   const { errors: formForm1Errors } = formForm1.formState;
 
-  const handleBox1 = async () => {
-    try {
-      const responseDeleteApiNotesId = await noteService.deleteApiNotesId.fetch({
-        id: get(props, "query.NoteId"),
-      });
-      navigateService.goBack();
-    } catch (e: unknown) {
-      Toast.error("Delete Failed");
-    }
-  };
   const handleText1 = async () => {
     try {
       navigateService.goBack();
@@ -61,7 +51,7 @@ function DetailNotePage(props: DetailNotePageProps): JSX.Element {
   return (
     <Page className={styles.page_container}>
       <Background className={styles.background_1} />
-      <Box className={styles.box_1} onClick={handleBox1}>
+      <Box className={styles.box_1}>
         <Box className={styles.box_0}>
           <Box className={styles.box_2}>
             <Iconssafarichevronbackward className={styles.molecule_0} />
