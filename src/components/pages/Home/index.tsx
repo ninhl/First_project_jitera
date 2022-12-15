@@ -52,9 +52,9 @@ function HomePage(props: HomePageProps): JSX.Element {
             renderItem={useCallback(
               (item: any) => (
                 <NoteItem
-                  Content={get(getApiNotesResult, "data.notes.content")}
+                  Content={item.content}
                   onClickDetail={handleOnClickDetailList1Item}
-                  Id={get(getApiNotesResult, "data.notes.id")}
+                  Id={item.id}
                 />
               ),
               []
