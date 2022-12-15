@@ -2,7 +2,9 @@
 import React, { useCallback, useMemo } from "react";
 import { DefaultPageProps } from "@interfaces/page";
 import get from "lodash/get";
-import { Box, Text } from "@jitera/jitera-web-ui-library";
+import CommonBtn from "@components/molecules/CommonBtn";
+import { useNavigateService } from "@services/navigate";
+import { Box,Text } from "@jitera/jitera-web-ui-library";
 import styles from "./styles.module.css";
 type Property1activeMoleculeProps = DefaultPageProps & {
   pageName?: string;
